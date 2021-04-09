@@ -119,12 +119,22 @@ As a teaser, here are some of them in brief:
 - utilities which pack a development version of a script (that uses `require`) into a compact form (that doesn't) for distribution
 - a simulation environment which can run scripts externally in VS Code, allowing them to be breakpointed, inspected, etc
 - a modular controller architecture which allows scripts to be composed of smaller parts in a plug-and-play fashion
+- all of the above is kept under source control using git/github at all times
 
 None of these are particularly original ideas, and I know for a fact that other people are doing some or all of them.
 
-Sadly, a lot of this stuff is the sort of infrastructure that Dual Universe should be providing out of the box, but isn't.
+The community can (and should) share this stuff of course. Unfortunately there are some major disincentives for doing so. In a game that includes a large element of competition, being able to run with your script development whilst other people can only walk is a hard thing to give away. 
 
-The community can (and should) share this stuff, but there are some major disincentives for doing so - not least because being able to run with your script development whilst other people can only walk gives you the chance to develop some kick-ass scripts that you or your org can use to gain an advantage.
+If we could all agree to share some of the basics though, everyone would benefit. 
+
+Everything I've done is in private Github repos, and I intend to open most of it up. The main reason for not doing so now is simply that it would be too hard for others to use without more support than I can probably give.
+
+This blog is part of my way of tackling that, by trying to slowly document what I've created, and release bits of it as I do.
+
+Incidentally, a lot of this infrastructure is stuff that Dual Universe should be providing out of the box. Even if they don't make it themselves, I would really like to see them support a community effort in this direction.
+
+I shan't be holding my breath, however...
+
 
 
 
