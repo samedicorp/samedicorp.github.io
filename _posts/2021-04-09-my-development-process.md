@@ -5,27 +5,39 @@ date: 2021-04-09T14:55:27.398Z
 categories: tools
 ---
 
-I've been coding professionally for well over 30 years, and in that time I've grown fat and lazy - getting used to such luxuries as IDEs, liters, helpful warnings, visual debuggers, symbolic breakpoints, unit tests and source control.
+I've been coding professionally for 30+ years (oh god I'm old), and in that time I've grown fat and lazy...
+
+I have become accustomed to such luxuries as IDEs, liters, helpful warnings, visual debuggers, symbolic breakpoints, unit tests and source control.
 
 Suffice to say that none of that niceness is available when developing DU code.
 
-Oh no, we have to suffer for our art.
+Oh no, we have to suffer for our art!
 
 But hey - what's not to like about printf debugging?
 
-In this post, I'm going to take a brief overview of what the basic scripting experience is like, if you just take it at face value.
+In this post, I'm going to take a brief overview of what the basic scripting experience is like, at face value.
 
 This is, of necesssity, going to sound a bit negative. 
 
 To be fair, it _is_ a bit negative. 
 
-I've worked on a big, popular game, so I do understand that there will have been a very large number of competing priorities that came above fancy features for scripters. Nonetheless, there's no getting away from the fact that the scripting tools in DU are pretty fucking awful. No worse than most other games / modding environments to be fair, but that doesn't make it any less painful.
+I should say that I've worked as a senior coder on a big, popular game, so I do see where NQ are coming from. I understand that there will have been a very large number of competing priorities that came above fancy features for scripters. Nonetheless, there's no getting away from the fact that the scripting tools in DU are pretty bare bones. They are no worse than many other games, and better than some - compared to Skyrim modding, writing DU scripts is a cakewalk. However, **if you believe as I do that scripting in DU is a force-multiplier which has the power to turn a good game into a really great game**, then there's no excuse for the lack of love shown to the scripting environment.
 
-The good news is that there are workaround for some of these problems. In future posts I will go into what I have done / am doing to make my own scripting life a little less horrible. I also intend to share my tools and techniques too, where I can.
+DU can and should fix this stuff.
 
-If I try to include all of that stuff here though, I'll be writing forever. So to start with, lets look at one or two of the problems.
+The good news though is that in the meantime, there are workarounds for quite a few things. 
+
+In future posts on this blog I intend to go into what I have done / am doing to make my own scripting life a little less horrible. I also intend to share my tools and techniques too, where I can.
+
+I expect that a lot of what I've done will turn out to be not as good as someone else's solution. That's fine by me, and if this blog helps to bring those better solutions to light, then that's a job well done as far as I'm concerned.
+
+Anyhoo, if I try to include all of my solutions here, I'll be writing forever. 
+
+So to start with, lets look at one or two of the problems.
 
 ## (Roughly) The Way It Works Out Of The Box
+
+This is not a tutorial and I'm not going to describe the entire scripting process, but here's a brief overview.
 
 In Dual Universe, scripts are added to controllers, which are elements that form part of your construct (vehicle, building, etc). 
 
