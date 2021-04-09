@@ -23,9 +23,9 @@ To be fair, it _is_ a bit negative.
 
 I should say that I spent a long time as [a senior coder on a big, popular game](https://www.footballmanager.com), so I do understand the pressures that NQ are under. 
 
-There will have been a very large number of competing priorities that came above fancy features for scripters. Scripting for DU is no worse than many other game - compared to Skyrim modding, writing DU scripts is a cakewalk - but there's no getting away from the fact that the scripting tools in DU are pretty bare bones.
+There will have been a very large number of competing priorities that came above fancy features for scripters. Scripting for DU is no worse than many other games - compared to Skyrim modding, writing DU scripts is a cakewalk - but there's no getting away from the fact that the scripting tools in DU are pretty bare bones.
 
-If you believe, as I do, that **scripting in DU is a force-multiplier which can turn a good game into a really really great game**, then there's every incentive for NQ to get this stuff right. They can and should fix this stuff. It may not be the highest priority, but it's more important than it might first appear.
+If you believe, as I do, that **scripting in DU is a force-multiplier which can turn a good game into a really really great game**, then there's every incentive for NQ to get this stuff right. They can and should improve things. It may not be the highest priority, but it's more important than it might first appear. An empowered scripting community can fill in many of the gaps in the actual game that the development team currently don't have time for.
 
 The good news though is that in the meantime, there are workarounds for quite a few things. 
 
