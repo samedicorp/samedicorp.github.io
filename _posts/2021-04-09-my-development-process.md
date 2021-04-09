@@ -13,6 +13,18 @@ Oh no, we have to suffer for our art.
 
 But hey - what's not to like about printf debugging?
 
+In this post, I'm going to take a brief overview of what the basic scripting experience is like, if you just take it at face value.
+
+This is, of necesssity, going to sound a bit negative. 
+
+To be fair, it _is_ a bit negative. 
+
+I've worked on a big, popular game, so I do understand that there will have been a very large number of competing priorities that came above fancy features for scripters. Nonetheless, there's no getting away from the fact that the scripting tools in DU are pretty fucking awful. No worse than most other games / modding environments to be fair, but that doesn't make it any less painful.
+
+The good news is that there are workaround for some of these problems. In future posts I will go into what I have done / am doing to make my own scripting life a little less horrible. I also intend to share my tools and techniques too, where I can.
+
+If I try to include all of that stuff here though, I'll be writing forever. So to start with, lets look at one or two of the problems.
+
 ## (Roughly) The Way It Works Out Of The Box
 
 In Dual Universe, scripts are added to controllers, which are elements that form part of your construct (vehicle, building, etc). 
@@ -43,17 +55,76 @@ Most of us are used to being able to hop around our code, and group chunks of it
 
 The basic script editing experience in DU doesn't support this. There are some workarounds, of which more, later.
 
-### What 
+### This Code Makes No Sense...
 
+To err is human, but to really fuck up, you need a compu... no, actually you need a human for that too.
 
+We all make mistakes with our code. We run it, and things fall over, or don't do anything, or silently overwrite vital files causing major economic crises.
 
+The most fundamental mistakes result in code that doesn't even run. Most programming environments do their best to warn you about this before you even run the code. They parse what you've written as you write it, and highlight things that don't make sense. Incidentally they also help you out by offering to auto-complete what you're typing with code that does make sense.
 
-### There Must Be A Way To...
+In Dual Universe, you're pretty much on your own, on this front. There is syntax colouring, but that's your lot. No auto-complete. No linting or attempt to tell you that you've written nonsense.
 
+Oh well...
 
-There is syntax colouring, but no debugging, and no breakpoints.
+### I'm Sorry Dave, I'm Afraid I Can't Do That
 
-You can log to the console, and that's your lot pretty much your lot.
+The way we find out about our scripting mistakes in Dual Universe is by activating the controller (running the code).
+
+If it goes wrong, you get told there's a script error. At which point you can open up the editor again (you had to close it to run the code), and if you're lucky, you'll get told which line of which event hander had a problem.
+
+The script is dead at this point. You have no state. No variable values.
+
+So you fiddle a bit, and try again.
+
+It would be lovely if you could set a breakpoint, pause your code, and see what's going on - but you can't. 
+
+This is not a limitation in Lua, by the way (which is good news - more on that in a while). It's just a limitation in the integration of Lua with Dual Universe.
+
+### Print, And Indeed, Eff.
+
+So what's left?
+
+Printf-debugging, of course. Much beloved of gnarly old greybeards everywhere. I may in fact resemble that description, but we'll move swiftly on.
+
+So basically to find out what's going on, you litter your code with judicious print statements. 
+
+The syntax is actually `system.print()`, and no, it doesn't support printf formatting.
+
+### In Summary
+
+So to sum up, your code is split into little bits, that you can't get a good overview of. 
+
+You can't navigate or analyse your code in any meaningful way.
+
+You can't set breakpoints, or inspect variables at runtime.
+
+You have to close the editor to test your code, and the first time you know about a problem is when it doesn't do what it's supposed to - probably by silently crashing.
+
+Your only clue to what is going on is to log stuff to the console. Which by the way doubles up as an (extraordinarily clumsy and annoying) chat window that you can't move or resize.
+
+Are we having fun yet?
+
+In future posts, I will attempt to lay out some of my approaches to fixing these problems.
+
+As a teaser, here are some of them in brief:
+
+- a small set of utility functions (for things like formatted printing, table printing, etc)
+- using `require` to pull them in from disk during development, so that they only have to be defined once
+- making almost all event handlers in a script just one-line calls to a single controller object
+- using `require` to pull in that controller object from disk in the start handler
+- use an actual IDE (VS Code) to browse and edit the code during development
+- utilities which can unpack the JSON representation of a script into source files as a way of getting code out
+- utilities which can re-pack the source code into JSON
+- utilities which pack a development version of a script (that uses `require`) into a compact form (that doesn't) for distribution
+- a simulation environment which can run scripts externally in VS Code, allowing them to be breakpointed, inspected, etc
+- a modular controller architecture which allows scripts to be composed of smaller parts in a plug-and-play fashion
+
+None of these are particularly original ideas, and I know for a fact that other people are doing some or all of them.
+
+Sadly, a lot of this stuff is the sort of infrastructure that Dual Universe should be providing out of the box, but isn't.
+
+The community can (and should) share this stuff, but there are some major disincentives for doing so - not least because being able to run with your script development whilst other people can only walk gives you the chance to develop some kick-ass scripts that you or your org can use to gain an advantage.
 
 
 
