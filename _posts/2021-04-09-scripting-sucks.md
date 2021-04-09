@@ -21,7 +21,7 @@ This is, of necesssity, going to sound a bit negative.
 
 To be fair, it _is_ a bit negative. 
 
-I should say that I spent a long time as [a senior coder on a big, popular game](https://fm.com), so I do understand the pressures that NQ are under. 
+I should say that I spent a long time as [a senior coder on a big, popular game](https://www.footballmanager.com), so I do understand the pressures that NQ are under. 
 
 There will have been a very large number of competing priorities that came above fancy features for scripters. Scripting for DU is no worse than many other game - compared to Skyrim modding, writing DU scripts is a cakewalk - but there's no getting away from the fact that the scripting tools in DU are pretty bare bones.
 
