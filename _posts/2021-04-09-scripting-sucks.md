@@ -59,7 +59,7 @@ As mentioned above, your "script" is actually composed of a number of little Lua
 
 Conceptually though, the script is one entity. 
 
-Those little handlers make little sense in isolation. It's the combination of them together which flies your spaceship, or runs your factory, or whatever. At runtime, all of these handlers share the same environment and namespace - you can define a global variable or function in one handler, and use it in another.
+Those handlers make little sense in isolation. It's the combination of them together which flies your spaceship, or runs your factory, or whatever. At runtime, all of these handlers share the same environment and namespace - you can define a global variable or function in one handler, and use it in another.
 
 What's more, there are two mechanisms which do actually support bundling up your script into a single entity. You can copy the script attached to a controller as a blob of JSON, and later paste that blob back onto another controller, and the game will do its best to set up all the same event handlers. There's also another similar mechanism (autoconf files) - more of them at a later date.
 
@@ -105,15 +105,15 @@ The syntax is actually `system.print()`, and no, it doesn't support printf forma
 
 ### In Summary
 
-So to sum up, your code is split into little bits, that you can't get a good overview of. 
+I want to keep these blog posts reasonably brief, so I'll stop there.
 
-You can't navigate or analyse your code in any meaningful way.
+To sum up the out-of-box experience: 
 
-You can't set breakpoints, or inspect variables at runtime.
-
-You have to close the editor to test your code, and the first time you know about a problem is when it doesn't do what it's supposed to - probably by silently crashing.
-
-Your only clue to what is going on is to log stuff to the console. Which by the way doubles up as an (extraordinarily clumsy and annoying) chat window that you can't move or resize.
+- Your code is split into little bits, that you can't get a good overview of. 
+- You can't navigate or analyse your code in any meaningful way.
+- You can't set breakpoints, or inspect variables at runtime.
+- You have to close the editor to test your code, and the first time you know about a problem is when it doesn't do what it's supposed to - probably by silently crashing.
+- Your only clue to what is going on is to log stuff to the console. Which by the way doubles up as an (extraordinarily clumsy and annoying) chat window that you can't move or resize.
 
 Are we having fun yet?
 
@@ -125,7 +125,7 @@ As a teaser, here are some of them in brief:
 - using `require` to pull them in from disk during development, so that they only have to be defined once
 - making almost all event handlers in a script just one-line calls to a single controller object
 - using `require` to pull in that controller object from disk in the start handler
-- use an actual IDE (VS Code) to browse and edit the code during development
+- use [an actual IDE](https://code.visualstudio.com) to browse and edit the code during development
 - utilities which can unpack the JSON representation of a script into source files as a way of getting code out
 - utilities which can re-pack the source code into JSON
 - utilities which pack a development version of a script (that uses `require`) into a compact form (that doesn't) for distribution
