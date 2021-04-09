@@ -144,7 +144,7 @@ Everything I've done is in private Github repos, and I intend to open most of it
 
 This blog is part of my way of tackling that, by trying to slowly document what I've created, and release bits of it as I do.
 
-Incidentally, a lot of this infrastructure is stuff that Dual Universe should be providing out of the box. Even if they don't make it themselves, I would really like to see them support a community effort in this direction.
+A lot of this infrastructure is stuff that Dual Universe should be providing out of the box. Even if they don't make it themselves, I would really like to see them support a community effort in this direction, and add the necessary hooks into the game where appropriate to allow us to fill in the gaps.
 
 I shan't be holding my breath, however...
 
