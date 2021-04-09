@@ -61,11 +61,17 @@ Conceptually though, the script is one entity.
 
 Those handlers make little sense in isolation. It's the combination of them together which flies your spaceship, or runs your factory, or whatever. At runtime, all of these handlers share the same environment and namespace - you can define a global variable or function in one handler, and use it in another.
 
-What's more, there are two mechanisms which do actually support bundling up your script into a single entity. You can copy the script attached to a controller as a blob of JSON, and later paste that blob back onto another controller, and the game will do its best to set up all the same event handlers. There's also another similar mechanism (autoconf files) - more of them at a later date.
+There's nothing wrong with splitting code up per-se of course. Normally we do it at a fairly high level of granularity though. For scripts the size of the ones you make in Dual Universe, a handful of source files would be normal.  
 
-Most of us are used to being able to hop around our code, and group chunks of it together. Sure, we split things up into multiple source files, but it would be normal to do it at a fairly high level of granularity. If you have a bunch of functions to respond to different key presses, you might well expect to be able to put them into a single file so that you can flip around in it when browsing the code.
+I want to be able to group related chunks of functionality together, and generally organise things in a way that makes sense for the design. If I have a bunch of functions to respond to different key presses, I might well put them into a single class (in a single file). This keeps similar code together - which helps when browsing the code - but it also helps from the design and re-use perspective. Maybe I want to define an abstract interface for keypress handling, then supply alternative implementations for it?
 
-The basic script editing experience in DU doesn't support this. There are some workarounds, of which more, later.
+Tantalisingly, there are actually two mechanisms which do support bundling up your script into a single text file. Sadly, they are for interchange purposes only, however. 
+
+You can copy the script attached to a controller as a blob of JSON, and later paste that blob back onto another controller, and the game will do its best to set up all the same event handlers. You can also hand-craft another similar kind of file (autoconf files), and again apply them to existing controllers as a way of setting them up.
+
+It would be great if you could represent your script as external files. That would open up the possibility of using a real editor. It would be great if you could group related functionality, and make re-usable components that you could build your scripts out of, and share between scripts.
+
+As luck would have it, there are some workarounds that can get you some of the way there, but more of that in a later post.
 
 ### This Code Makes No Sense...
 
