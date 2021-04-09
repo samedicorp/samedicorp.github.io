@@ -123,14 +123,15 @@ As a teaser, here are some of them in brief:
 
 - a small set of utility functions (for things like formatted printing, table printing, etc)
 - using `require` to pull them in from disk during development, so that they only have to be defined once
-- making almost all event handlers in a script just one-line calls to a single controller object
+- making almost all event handlers in a script just one-line calls to controller objects
 - using `require` to pull in that controller object from disk in the start handler
 - use [an actual IDE](https://code.visualstudio.com) to browse and edit the code during development
 - utilities which can unpack the JSON representation of a script into source files as a way of getting code out
 - utilities which can re-pack the source code into JSON
 - utilities which pack a development version of a script (that uses `require`) into a compact form (that doesn't) for distribution
 - a simulation environment which can run scripts externally in VS Code, allowing them to be breakpointed, inspected, etc
-- a modular controller architecture which allows scripts to be composed of smaller parts in a plug-and-play fashion
+- a modular architecture which allows the creation of plug-and-play components which just handle one aspect of control, or display one kind of instrument
+- a reusable set of the above plug-ins for various different purposes
 - all of the above is kept under source control using git/github at all times
 
 None of these are particularly original ideas, and I know for a fact that other people are doing some or all of them.
