@@ -5,7 +5,7 @@ date: 2021-04-09T14:55:27.398Z
 categories: tools
 ---
 
-I've been coding professionally for 30+ years (oh god I'm old), and in that time I've grown fat and lazy...
+I've been [coding professionally](https://elegantchaos.com/about/) for 30+ years (oh god I'm old), and in that time it could be said that I've grown fat and lazy...
 
 I have become accustomed to such luxuries as IDEs, linters, helpful warnings, visual debuggers, symbolic breakpoints, unit tests and source control.
 
