@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My Development Process
+title: Scripting Sucks
 date: 2021-04-09T14:55:27.398Z
 categories: tools
 ---
