@@ -7,7 +7,7 @@ categories: tools
 
 I've been coding professionally for 30+ years (oh god I'm old), and in that time I've grown fat and lazy...
 
-I have become accustomed to such luxuries as IDEs, liters, helpful warnings, visual debuggers, symbolic breakpoints, unit tests and source control.
+I have become accustomed to such luxuries as IDEs, linters, helpful warnings, visual debuggers, symbolic breakpoints, unit tests and source control.
 
 Suffice to say that none of that niceness is available when developing DU code.
 
