@@ -55,7 +55,7 @@ It soon becomes apparent that there are some fairly major holes...
 
 ### Is This One Script, Or A Bunch Of Scripts?
 
-Your "script"  is actually composed of a number of little Lua fragments - one for each event you handle. The editor lets you view and edit the code attached to a particular event, but only one event at a time.
+As mentioned above, your "script" is actually composed of a number of little Lua fragments - one for each event you handle. The editor lets you view and edit the code attached to a particular event, but only one event at a time.
 
 Conceptually though, the script is one entity. 
 
