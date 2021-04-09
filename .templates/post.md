@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2021-04-09 10:41:00
+---
+
+Greetings, fellow Dual Universe citizens.
+
+My name is Samedi, and I spend a lot of my time in DU tinkering with Lua scripts.
+
+I am still very much figuring out the best ways to do things, so I'm not really sure why I imagined that it might be useful if I share my thoughts. Probably so that you can tell me what an idiot I am, and why I'm doing it all wrong...
+
+At this point I'm not entirely sure how often I'll post. We'll have to see, I guess.
