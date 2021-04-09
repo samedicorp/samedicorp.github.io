@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Welcome!"
+date:   2021-04-09 10:41:00
+categories: welcome
+---
+
+This is the blog of the Artificers Guild, a Dual Universe organisation dedicated to the sharing of scripting knowledge in Dual Universe.
+
+I (Samedi) intend to use this space to post various musings on the scripting process; how I'm going about it, tips & tricks, and whatever other nonsense occurs to me.
+
+I'd also be happy to consider hosting posts by other Dual Universe scripters, as long as they contribute to the pool of knowledge. If you're interested in doing this, get in touch.
+
+## The Organisation
+
+We have an in-game organisation, which you can join. It doesn't have a political motive, and aims to stay neutral in all conflicts.
+
+We understand that our members may have other political affiliations and be members of other organisations. 
+
+We realise that this means that it may not be possible for everyone to share all of their work.
+
+This is all fine. We simply ask all members:
+
+1. **Share Knowledge**: If you know something about scripting that you can share, please do so. If you can't share whole scripts, maybe you can share techniques and tips?
+2. **Be excellent to each other**: If a member of the guild needs help and you can give it, please do. See also (1).
