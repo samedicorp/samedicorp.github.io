@@ -1,7 +1,7 @@
 # Site settings
-title: 'The Artificers Guild'
-description: 'Dual Universe Scripting For The Masses'
-url: 'the-artificers-guild.github.io'
+title: 'Samedi's Scriptorium'
+description: 'A Blog About Dual Universe Scripting'
+url: 'samedicorp.github.io'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
@@ -13,7 +13,7 @@ author:
   #email: 
   #twitter_username: 
   #facebook_username: 
-  github_username: the-artificers-guild
+  github_username: samedicorp
   #linkedin_username:  
 
 defaults:
