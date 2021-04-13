@@ -21,15 +21,15 @@ Find yourself a keyboard controller, or a hoverseat or cockpit that you don't mi
 Open up editor and navigate to the `start` handler for the `unit` element. Replace any existing code with this:
 
 ```lua
-test = require('test')
-test.doSomething()
+myLibrary = require('myUtilities')
+myLibrary.doSomething()
 ```
 
 Now activate your controller, and it will completely fail to do anything!
 
-What it's _trying_ to do, however, is to load the contents of file called `test.lua`, evaluate it, and assign the result to a global variable called `test`. 
+What it's _trying_ to do, however, is to load the contents of file called `myUtilities.lua`, evaluate it, and assign the result to a global variable called `myLibrary`. 
 
-It is also assuming that `test` has a function called `doSomething`, which it tries to call.
+It is also assuming that `myLibrary` has a function called `doSomething`, which it tries to call.
 
 So let's fix the errors by creating the file.
 
@@ -37,7 +37,7 @@ So let's fix the errors by creating the file.
 
 When your script does `require('x')`, Lua looks for a file called `x.lua` in a specific folder in the game directory. Exactly where this is depends on where you've put the game. For me, it's something like `D:\Dual Universe\Game\data\lua\` - your mileage may vary.
 
-Navigate your way to this folder, create a file called `test.lua`, and enter the following text:
+Navigate your way to this folder, create a file called `myUtilities.lua`, and enter the following text:
 
 ```lua
 local module = { }
@@ -69,7 +69,7 @@ The biggest problem is that this script **only exists on your machine**.
 
 Any script in DU runs on the machine of the user who is interacting with the construct that it is attached to.
 
-If other people encounter a construct that your script is attached to, the `require` statement _won't work_, since the `test.lua` file only exists on your hard drive.
+If other people encounter a construct that your script is attached to, the `require` statement _won't work_, since the `myLibrary.lua` file only exists on your hard drive.
 
 A secondary problem is that DU does not report errors that occur in external scripts. 
 
