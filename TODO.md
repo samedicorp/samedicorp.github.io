@@ -1,8 +1,9 @@
 # Future Posts
 
-- VS Code setup and extensions
+- How to structure an external file
 - Source control
-- How to structure a module
+- Some basic helpers
+- VS Code setup and extensions
 - My utilities
 - My moDUlar architecture
 - Writing a controller module
@@ -10,4 +11,4 @@
 - Debugging tricks
 - My bundling tools
 - DUST
- 
+- Auto-discovering slots
