@@ -4,7 +4,7 @@ title: Experience Level
 date: 2021-04-13T09:53:07.517Z
 ---
 
-I'm aiming at these posts at people who are starting out with Dual Universe scripting, but already know how to code.
+I'm aiming these posts at people who are starting out with Dual Universe scripting, but already know how to code.
 
 I'm going to assume that you are familiar with one or more programming languages, and can find your way round Lua.
 
