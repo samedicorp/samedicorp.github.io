@@ -79,7 +79,7 @@ However, more often than not an error will only reveal itself at runtime - becau
 
 This is a massive pain in the arse! It's also annoying, because it should be fairly easy for NQ to fix.
 
-To be absolutely clear here, it is also worth noting that being able to edit the code in VS Code _does not mean that we can debug it there_! We're just editing the text files - it's still DU that's running them, and it won't know about any breakpoints we set!
+To be absolutely clear here, it is also worth noting that being able to edit the code in an IDE _does not mean that we can debug it there_! We're just editing the text files - it's still DU that's running them, and it won't know about any breakpoints we set!
 
 ## The Good News About The Bad News
 
