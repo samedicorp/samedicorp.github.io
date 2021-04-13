@@ -2,7 +2,6 @@
 layout: post
 title: Using External Files
 date: 2021-04-13T10:19:22.729Z
-published: false
 ---
 
 In my [previous post](/2021/scripting-sucks/), I talked about some of the "non-optimal" aspects of scripting for Dual Universe :)
