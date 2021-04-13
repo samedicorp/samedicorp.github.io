@@ -2,13 +2,14 @@
 layout: post
 title: Using External Files
 date: 2021-04-13T10:19:22.729Z
+published: false
 ---
 
-In my [previous post](/2021/scripting-sucks/), I talked about some of the... non-optimal aspects of scripting for Dual Universe.
+In my [previous post](/2021/scripting-sucks/), I talked about some of the "non-optimal" aspects of scripting for Dual Universe :)
 
 The good news is that we can get around quite a few of them, _whilst we develop our scripts_, by putting our source code into external files.
 
-Instead of typing Lua code directly into the Dual Universe script editor, we type it into one or more text files on disk, and just type a small script into the editor which pulls the contents of the files in and uses them.
+Instead of typing Lua code directly into the Dual Universe script editor, we put most of it into one or more text files on disk. We then just type a small script into the editor which pulls the contents of the files in and uses them.
 
 So how do we achieve this?
 
@@ -27,17 +28,17 @@ myLibrary.doSomething()
 
 Now activate your controller, and it will completely fail to do anything!
 
-What it's _trying_ to do, however, is to load the contents of file called `myUtilities.lua`, evaluate it, and assign the result to a global variable called `myLibrary`. 
+What this code is _trying_ to do, however, is to load lua from a file called `myUtilities.lua`, execute it, and assign the result to a global variable called `myLibrary`. 
 
-It is also assuming that `myLibrary` has a function called `doSomething`, which it tries to call.
+We are assuming that the result of executing `myLibrary` is an object (I use the term loosely) which has a function called `doSomething` -- which we are then trying to call.
 
-So let's fix the errors by creating the file.
+So let's fix the errors by creating the file and making it do just that.
 
 ## Where To Put Your Code
 
-When your script does `require('x')`, Lua looks for a file called `x.lua` in a specific folder in the game directory. Exactly where this is depends on where you've put the game. For me, it's something like `D:\Dual Universe\Game\data\lua\` - your mileage may vary.
+When your script does `require('x')`, Lua looks for a file called `x.lua` in a specific folder in the game directory. Exactly where this is depends on where you've put the game. For me, it's something like `D:\Dual Universe\Game\data\lua\` - your mileage may vary, but it will always be in the `lua` folder of the `data` folder of the `Game` folder.
 
-Navigate your way to this folder, create a file called `myUtilities.lua`, and enter the following text:
+Navigate your way to this folder, create a file called `myUtilities.lua` using your favourite text editor, and enter the following text:
 
 ```lua
 local module = { }
