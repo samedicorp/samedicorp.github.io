@@ -74,9 +74,9 @@ If other people encounter a construct that your script is attached to, the `requ
 
 A secondary problem is that DU does not report errors that occur in external scripts. 
 
-If you mess up the file badly enough that it doesn't parse, then DU will correctly report an error at the line where the `require()` call is, since that line itself will fail. 
+If you mess up the file badly enough that it doesn't parse, then DU will correctly report an error at the line where the `require()` call is, since evaluating the file itself will fail. 
 
-However, if an error occurs whilst running your script, DU will tell you that a Script Error occurred, but not where.
+However, more often than not an error will only reveal itself at runtime - because you're calling a function that's misspelt, or accessing a property that isn't defined, or doing something bad like dividing a number by zero. When running your script in these situations, DU will tell you that a Script Error occurred, but not where.
 
 This is a massive pain in the arse! It's also annoying, because it should be fairly easy for NQ to fix.
 
@@ -91,14 +91,3 @@ When it comes time to distribute your code to other DU users, you can _bundle it
 If you structure your external files correctly, the bundling process can pretty much just be a case of copying and pasting from the external source file into the script editor. As it's something you may find yourself having to do repeatedly however, it is worth _developing some tooling_ to automate the process.
 
 Tune in to my future posts to hear more about how to structure your external code to make it easier to debugging and bundle. I'll also cover the tooling I've developed for myself, and hopefully share it for others to use.
-
-
-
-
-
-The first,
-
-
-
-
-
