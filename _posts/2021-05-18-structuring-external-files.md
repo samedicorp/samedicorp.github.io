@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Keeping Things Organised
-date: 2021-04-16T12:48:22.729Z
-published: false
+date: 2021-05-18T10:14:50.992Z
 ---
 In my last post, I discussed how to place your Lua code into external files during development, and why it can be helpful.
 
@@ -34,7 +33,7 @@ A second, slightly related reason to put everything in a folder is that it lets 
 
 If your scripts are in a folder with your name, mine are in a folder with my name, then they can safely co-exist. If you have a file called `utilities.lua` and I do too, then I can do `require('samedi.utilities')` and know that I'll be getting my one, or `require('yourname.utilities)` and get yours.
 
-To be clear, I'm not suggesting that you actually share scripts this way for general consumption. There are better ways to share scripts with normal users, and it's better not to force someone to install some external files to use your stuff.
+To be clear, I'm not suggesting that you actually share scripts this way for general consumption. There are better ways to share scripts with normal users, and it's probably not a good idea to force someone to install external files to use your stuff.
 
 However, if someone has developed some Lua code that you want to make use of, then it's good to be able to set things up during development so that you can update their code at any point. Hopefully their code is also in source control, and you can fetch it to a folder with their name and pull new versions at any time. Even if that's not the case and you are having to fetch it manually, putting it in a folder of its own makes sure that it it doesn't get muddled up with yours.
 
@@ -44,7 +43,18 @@ If you start developing complex scripts you may want to split things across mult
 
 The `require` syntax generalises to subfolders. If you do `require('samedi.utilities.strings')`, it will look for  `lua/samedia/utilities/strings.lua`.
 
-## Organising Your Code
+## Conclusion
 
+In the scripts that I've made for DU, I have made extensive use of this approach during development. 
 
+I split the code up into multiple files. Some contain general utilities, other focus on a specific area of functionality like braking, or navigation.
 
+This way, I can pull in the bits that I need for any given task.
+
+All of this should come naturally if you've done any coding before; it's good to know that we don't have to completely abandon modular code and re-use just because we're working in DU.
+
+Eventually, of course, if you want to distribute your script to other people, you will need to take all of this code out of your source files and package it up into a single in-game controller.
+
+I'll explore the best ways to tackle that in a future post. I'm most of the way towards a completely automated solution, and there are some other ones out there. 
+
+If you are careful about how you structure your individual files though, and don't need to package things up very frequently, simply copying & pasting the code from them may be enough.
