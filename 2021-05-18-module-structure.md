@@ -2,7 +2,6 @@
 layout: post
 title: Module Structure
 date: 2021-05-18T10:28:55.250Z
-published: false
 ---
 
 In previous posts, I've talked about the advantages to be gained by [keeping your script code on disk](https://samedicorp.github.io/2021/structuring-external-files/) during development.
