@@ -41,7 +41,7 @@ However, if someone has developed some Lua code that you want to make use of, th
 
 If you start developing complex scripts you may want to split things across multiple files, or develop libraries of related scripts.
 
-The `require` syntax generalises to subfolders. If you do `require('samedi.utilities.strings')`, it will look for  `lua/samedia/utilities/strings.lua`.
+The `require` syntax generalises to subfolders. If you do `require('samedi.utilities.strings')`, it will look for  `lua/samedi/utilities/strings.lua`.
 
 ## Conclusion
 
