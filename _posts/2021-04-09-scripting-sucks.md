@@ -71,7 +71,7 @@ Tantalisingly, there are actually two mechanisms which do support bundling up yo
 
 You can copy the script attached to a controller as a blob of JSON, and later paste that blob back onto another controller, and the game will do its best to set up all the same event handlers. You can also hand-craft another similar kind of file (autoconf files), and again apply them to existing controllers as a way of setting them up.
 
-It would be great if you could represent your script as external files. That would open up the possibility of using a real editor. It would be great if you could group related functionality, and make re-usable components that you could build your scripts out of, and share between scripts.
+It would be great if you could represent your script as external lua files. That would open up the possibility of using a real editor. It would be great if you could group related functionality, and make re-usable components that you could build your scripts out of, and share between scripts.
 
 As luck would have it, there are some workarounds that can get you some of the way there, but more of that in a later post.
 
