@@ -155,8 +155,6 @@ The bit of code we wrote, which made this particular script what it is, is quite
 
 Which is nice...
 
-### Rendering
-
 Of course, there is one major detail still to come, which is the rendering code.
 
 ```lua
