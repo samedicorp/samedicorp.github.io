@@ -113,10 +113,10 @@ Finally, in our `onContainerChanged` handler, we're calling a method on `self.sc
 
 ### Screens
 
--- ---------------------------------------------------------------------
--- Internal
--- ---------------------------------------------------------------------
+The other built in module we're using is the `screen` module, which supplies a service with the same name:
 
+
+```lua
 function Module:attachToScreen()
     -- TODO: send initial container data as part of render script
     local service = modula:getService("screen")
@@ -127,7 +127,41 @@ function Module:attachToScreen()
         end
     end
 end
+```
 
+During startup with look for this service, and if we find it, we register a screen with it.
+
+We pass a reference to the current module, so that the screen module can call us back when the screen produces output.
+
+If we pass a name as the second parameter, we will get attached to the screen element with that name. Alternatively we can pass false (as we are doing here), and we're attached to the first screen connected to the programming board.
+
+Finally, we pass a render script. This is lua code, using the DU rendering API. We'll look at our render script in a minute, but for now, that's enough detail. 
+
+Now the line of code in our `onContainerChanged` handler makes more sense:
+
+```lua
+    self.screen:send({ name = container:name(), value = container.percentage })
+```
+
+We send some data to the attached screen. The data contains the name of the container that changed, and a percentage value of how full it is.
+
+The render script uses this information on the screen to draw a bar for the container.
+
+### All Over, Bar The ~~Shouting~~ Rendering
+
+That's about it, for our script. It shows how simple things can be, when you can split the code up into small reusable models.
+
+Most of the cleverness stuff is happening elsewhere, in the `containers` and `screen` modules, and in the rendering script.
+
+The bit of code we wrote, which made this particular script what it is, is quite clean and simple.
+
+Which is nice...
+
+### Rendering
+
+Of course, there is one major detail still to come, which is the rendering code.
+
+```lua
 Module.renderScript = [[
 containers = containers or {}
 if payload then
@@ -143,6 +177,24 @@ local chart = layer:addChart(layer.rect:inset(10), containers, "Play")
 layer:render()
 screen:scheduleRefresh()
 ]]
+```
+
+But hang on... this looks suspiciously simple too.
+
+It is, of course, too simple by half.
+
+That's because of two things.
+
+Firstly, the script that you pass to the `screen` module is just part of the code it sends to the actual screen. It adds some code for you, which handles passing data to the screen, and getting responses back. The details of that could be a post in themselves, so I'll skirt over them for now.
+
+Secondly, this script we've written above is using another technology, which is a companion of Modula. It's called Toolkit, and it's a user interface library.
+
+It defines a set of standard user interface widgets that you can use to display information. It's pretty simple right now, but like Modula itself, it is growing fast.
+
+As you can see from the code above, it lets you operate at quite a high level. We're adding a single widget, which is a chart, and passing it a list of records, that are sent from the main script. Each record consists of a name and a value (between 0 and 1). The chart widget draws a bar for each record, with a label showing the name and value.
+
+
+
 
 return Module
 ```
