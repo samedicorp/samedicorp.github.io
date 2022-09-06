@@ -32,7 +32,7 @@ modulaSettings = {
 
 This does a few things. It gives the module a name and version number, that the pack tool can use later.
 
-The `modules` property lists the modules that the tool uses. Notice that two of these modules are standard ones that are part of Modula, so they are prefixed with `samedicorp.modula.modules`. The other one is the module that defines the code that drives our script, so it is prefixed with the location of this script: `samedicorp.container-monitor`. During development, these prefixes correspond to installation locations with the game's `lua` folder[^1]. 
+The `modules` property lists the modules that the tool uses. Notice that two of these modules are standard ones that are part of Modula, so they are prefixed with `samedicorp.modula.modules`. The other one is the module that defines the code that drives our script, so it is prefixed with the location of this script: `samedicorp.container-monitor`[^1]. 
 
 The `templates` property is optional. If you supply it, it should contain the path to template `.conf` and `.json` files that the pack tool will use. If you omit it, the defaults will be used instead.
 
@@ -213,7 +213,7 @@ return Module
 
 Footnotes:
 
-[^1]: In the packed script, though, everything is internal and the prefixes are used simply to identify the modules.
+[^1]: During development, these prefixes correspond to installation locations with the game's `lua` folder. In the packed script, though, everything is internal and the prefixes are used simply to identify the modules.
 
 [^2]: Note that a script can have multiple modules of its own if it wants, and it doesn't have to use any particular name for them. Often having a single one is enough though, and having a standard name is a good convention.
 
