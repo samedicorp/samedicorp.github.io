@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Modula Example
+published: false
 ---
 To continue my introduction of [Modula](https://github.com/samedicorp/modula), here's [a simple example script](https://github.com/samedicorp/container-monitor), which makes use of a couple of built in modules.
 
@@ -96,6 +97,21 @@ function Module:onContainerChanged(container)
 end
 ```
 
+This code illustrates a few points:
+
+The `debugf` function is a global supplied by Modula, which you can use for debug logging. Output from this will only be logged to the console if Modula's `logging` option is set to true.
+
+There is also `printf` function, which always logs.
+
+In our `onStart` handler, we're using `getService` to find a service supplied by another module. This is the `samedicorp.modula.modules.containers` module that we mentioned in our configuration file.
+
+If we find it, we call `findContainers` on it. That's a function that the service implements, which uses Modula to find any linked contains of the types specified. Once we've done this, the containers module will send us a `onContainerChanged` event every time one of these containers changes.
+
+In our `onStop` handler, we're not actually doing anything useful. Quite often this is the case, since you get this handler when everything is being shut down, and mostly you can just safely leave everything alone -- any resources that you are using will be automatically freed up.
+
+Finally, in our `onContainerChanged` handler, we're calling a method on `self.screen`. This property was set up by the `attachToScreen` method that we called during `onStart`, so we should probably look at that next...
+
+### Screens
 
 -- ---------------------------------------------------------------------
 -- Internal
