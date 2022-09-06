@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Modula Example
-published: false
+published: true
 ---
 To continue my introduction of [Modula](https://github.com/samedicorp/modula), here's [a simple example script](https://github.com/samedicorp/container-monitor), which makes use of a couple of built in modules.
 
@@ -193,7 +193,19 @@ It defines a set of standard user interface widgets that you can use to display 
 
 As you can see from the code above, it lets you operate at quite a high level. We're adding a single widget, which is a chart, and passing it a list of records, that are sent from the main script. Each record consists of a name and a value (between 0 and 1). The chart widget draws a bar for each record, with a label showing the name and value.
 
+This description is deliberately light on detail - again, Toolkit needs multiple posts in its own right.
 
+## Summary
+
+To wrap things up.
+
+What you've seen here is a little example, showing how you can write modula scripts.
+
+If you look at the [Github repo] you will see that there's a bit more to it than I've described here, but not much. There a bit of configuration which lets VSCode automatically pack the script which you hit Ctrl-B. There are some templates used to make autoconf and json files when you pack.
+
+That's about it though!
+
+In future posts I'll go into all of this in more detail, but I hope that's whetted your appetite in the meantime.
 
 
 return Module
