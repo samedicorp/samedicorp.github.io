@@ -183,7 +183,7 @@ That's because of two things.
 
 Firstly, the script that you pass to the `screen` module is just part of the code it sends to the actual screen. It adds some code for you, which handles passing data to the screen, and getting responses back. The details of that could be a post in themselves, so I'll skirt over them for now.
 
-Secondly, this script we've written above is using another technology, which is a companion of Modula. It's called Toolkit, and it's a user interface library.
+Secondly, this script we've written above is using another technology, which is a companion of Modula. It's called [Toolkit](https://github.com/samedicorp/toolkit), and it's a user interface library.
 
 It defines a set of standard user interface widgets that you can use to display information. It's pretty simple right now, but like Modula itself, it is growing fast.
 
