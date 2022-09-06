@@ -36,17 +36,14 @@ The `modules` property lists the modules that the tool uses. Notice that two of 
 
 The `templates` property is optional. If you supply it, it should contain the path to template `.conf` and `.json` files that the pack tool will use. If you omit it, the defaults will be used instead.
 
-[^1]: In the packed script, though, everything is internal and the prefixes are used simply to identify the modules.
-
 ### Main Module
 
-A script built with Modula can use modules from Modula itself, or from other libraries (supplied by other people).
+A script built with Modula can use modules from Modula itself, or from other libraries (written by you, or supplied by other people).
 
 However, it also needs at least one custom module which wires everything together and drives the script along.
 
-By convention this is called `main.lua` and like the configuration file, it lives at the root of the script folder.
+By convention this is called `main.lua` and like the configuration file, it lives at the root of the script folder[^2].
 
-Note that a script can have multiple modules of its own if it wants. Often having a single one is enough though.
 
 ### Registration
 
@@ -212,3 +209,11 @@ In future posts I'll go into all of this in more detail, but I hope that's whett
 
 return Module
 ```
+
+---
+
+Footnotes:
+
+[^1]: In the packed script, though, everything is internal and the prefixes are used simply to identify the modules.
+
+[^2]: Note that a script can have multiple modules of its own if it wants, and it doesn't have to use any particular name for them. Often having a single one is enough though, and having a standard name is a good convention.
