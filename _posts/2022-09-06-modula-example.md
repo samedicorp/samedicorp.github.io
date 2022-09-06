@@ -203,10 +203,6 @@ That's about it though!
 
 In future posts I'll go into all of this in more detail, but I hope that's whetted your appetite in the meantime.
 
-
-return Module
-```
-
 ---
 
 Footnotes:
