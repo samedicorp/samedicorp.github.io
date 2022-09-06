@@ -197,7 +197,7 @@ To wrap things up.
 
 What you've seen here is a little example, showing how you can write modula scripts.
 
-If you look at the [Github repo] you will see that there's a bit more to it than I've described here, but not much. There a bit of configuration which lets VSCode automatically pack the script which you hit Ctrl-B. There are some templates used to make autoconf and json files when you pack.
+If you look at the [Github repo](https://github.com/samedicorp/container-monitor) you will see that there's a bit more to it than I've described here, but not much. There a bit of configuration which lets VSCode automatically pack the script which you hit Ctrl-B. There are some templates used to make autoconf and json files when you pack.
 
 That's about it though!
 
