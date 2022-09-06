@@ -63,9 +63,9 @@ The register function is called early on during startup. Modula doesn't yet know
 
 Things you can do, however, include:
 
-- register as a service
+- register _as_ a service
 - register for events
-- example the connected elements
+- iterate over any connected elements that Modula found
 
 In our case, the only thing we want to do is to register for a few events.
 
@@ -98,26 +98,25 @@ end
 
 This code illustrates a few points:
 
-The `debugf` function is a global supplied by Modula, which you can use for debug logging. Output from this will only be logged to the console if Modula's `logging` option is set to true.
-
-There is also `printf` function, which always logs.
+The `debugf` function is a global supplied by Modula, which you can use for debug logging. Output from this will only be logged to the console if Modula's `logging` option is set to true[^3].
 
 In our `onStart` handler, we're using `getService` to find a service supplied by another module. This is the `samedicorp.modula.modules.containers` module that we mentioned in our configuration file.
 
-If we find it, we call `findContainers` on it. That's a function that the service implements, which uses Modula to find any linked contains of the types specified. Once we've done this, the containers module will send us a `onContainerChanged` event every time one of these containers changes.
+If we find the service, we call `findContainers` on it. That's a function that the service implements, which uses Modula to find any linked contains of the types specified. Once we've done this, the containers module will send us a `onContainerChanged` event every time one of these containers changes.
 
-In our `onStop` handler, we're not actually doing anything useful. Quite often this is the case, since you get this handler when everything is being shut down, and mostly you can just safely leave everything alone -- any resources that you are using will be automatically freed up.
+In our `onStop` handler, we're not actually doing anything useful. Quite often this is the case, since you get this handler when everything is being shut down, and mostly you can just safely leave everything alone -- any resources that you are using will be automatically freed up. You don't have to register for the `onStop` event if you don't need it -- we just did it as an illustration.
 
 Finally, in our `onContainerChanged` handler, we're calling a method on `self.screen`. This property was set up by the `attachToScreen` method that we called during `onStart`, so we should probably look at that next...
 
 ### Screens
 
-The other built in module we're using is the `screen` module, which supplies a service with the same name:
+The other built in module we're using is the `screen` module, which supplies a service with the same name.
+
+We use this service in `attachToScreen`:
 
 
 ```lua
 function Module:attachToScreen()
-    -- TODO: send initial container data as part of render script
     local service = modula:getService("screen")
     if service then
         local screen = service:registerScreen(self, false, self.renderScript)
@@ -128,9 +127,9 @@ function Module:attachToScreen()
 end
 ```
 
-During startup with look for this service, and if we find it, we register a screen with it.
+The function looks for the screen service, and if we find it, we register a screen with it.
 
-We pass a reference to the current module, so that the screen module can call us back when the screen produces output.
+We pass a reference to our main module, so that the screen module can call us back when the screen produces output.
 
 If we pass a name as the second parameter, we will get attached to the screen element with that name. Alternatively we can pass false (as we are doing here), and we're attached to the first screen connected to the programming board.
 
@@ -217,3 +216,5 @@ Footnotes:
 [^1]: In the packed script, though, everything is internal and the prefixes are used simply to identify the modules.
 
 [^2]: Note that a script can have multiple modules of its own if it wants, and it doesn't have to use any particular name for them. Often having a single one is enough though, and having a standard name is a good convention.
+
+[^3]: There is also `printf` function, which always logs.
