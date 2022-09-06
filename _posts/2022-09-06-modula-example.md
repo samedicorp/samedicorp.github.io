@@ -177,7 +177,7 @@ screen:scheduleRefresh()
 
 But hang on... this looks suspiciously simple too.
 
-It is, of course, too simple by half.
+It is, of course, _too simple by half_.
 
 That's because of two things.
 
